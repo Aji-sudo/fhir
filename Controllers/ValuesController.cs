@@ -21,6 +21,7 @@ public class FhirController : ControllerBase
 <<<<<<< HEAD
 <<<<<<< HEAD
 
+<<<<<<< HEAD
                     Given = new[] { "kane" },
 
 =======
@@ -29,6 +30,9 @@ public class FhirController : ControllerBase
 =======
                     Given = new[] { "Susan" },
 >>>>>>> 60b8f949db594a89aa8cdbb59005b970737de2de
+=======
+                    Given = new[] {"jill"},
+>>>>>>> 43663188f8ceea24024ed7375c77b6f30c96a37e
                     Family = "Doe"
                 }
             },
@@ -104,11 +108,10 @@ public class FhirController : ControllerBase
 
             if (patient == null)
             {
-<<<<<<< HEAD
                 return BadRequest(new { message = "enter details correctly" });
-=======
+
                 return BadRequest(new { message = "Please enter valid  patient data" });
->>>>>>> branch1
+
             }
 
             // Generate a new ID for the patient
