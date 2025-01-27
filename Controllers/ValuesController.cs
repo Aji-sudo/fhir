@@ -14,11 +14,11 @@ public class FhirController : ControllerBase
         var patient = new Patient
         {
             Id = id,
-            Name = new List<HumaName>
+            Name = new List<HumanName>
             {
                 new HumanName
                 {
-                    Given = new[] { "Jon" },
+                    Given = new[] { "Joe" },
                     Family = "Doe"
                 }
             },
