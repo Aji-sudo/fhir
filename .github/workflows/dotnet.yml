@@ -1,0 +1,40 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: API Integration Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  api-integration:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '8.0'
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build the project
+      run: dotnet build --configuration Release
+
+
+    - name: Call POST API and capture response
+      run: |
+        echo "Calling POST API"
+        POST_RESPONSE=$(curl -X POST "https://localhost:7283/api/fhir/patient" -H "Content-Type: application/json" -d '{"key1":"value1", "key2":"value2"}' -s -w "%{http_code}" -o post_response.txt)
+        POST_STATUS_CODE=$(tail -n 1 <<< "$POST_RESPONSE")
+        POST_RESPONSE_BODY=$(cat post_response.txt)
+
+        echo "POST Status Code: $POST_STATUS_CODE"
+        echo "POST Response Body: $POST_RESPONSE_BODY"
+
