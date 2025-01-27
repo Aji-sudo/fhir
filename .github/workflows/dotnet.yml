@@ -30,8 +30,8 @@ jobs:
     - name: Call POST API and capture response
       run: |
         echo "Calling POST API"
-        $POST_RESPONSE =curl -X POST "https://localhost:7283/api/fhir/patient" -H "Content-Type: application/json" -d "{\"resourceType\":\"Patient\",\"name\":[{\"use\":\"official\",\"family\":\"Doe\",\"given\":[\"John\"]}],\"gender\":\"male\",\"birthDate\":\"1990-01-01\"}" -s -w "%{http_code}" -o post_response.txt
-        $POST_STATUS_CODE = (Get-Content post_response.txt | Select-Object -Last 1)
-        $POST_RESPONSE_BODY = Get-Content post_response.txt -Raw
+        POST_RESPONSE=$(curl -X POST "https://localhost:7283/api/fhir/patient" -H "Content-Type: application/json" -d "{\"resourceType\":\"Patient\",\"name\":[{\"use\":\"official\",\"family\":\"Doe\",\"given\":[\"John\"]}],\"gender\":\"male\",\"birthDate\":\"1990-01-01\"}" -s -w "%{http_code}")
+        STATUS_CODE=$(echo "$POST_RESPONSE" | tail -n 1)
+        RESPONSE_BODY=$(echo "$POST_RESPONSE" | head -n -1)
         echo "POST Status Code: $POST_STATUS_CODE"
         echo "POST Response Body: $POST_RESPONSE_BODY"
