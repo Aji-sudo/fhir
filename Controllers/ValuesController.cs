@@ -18,7 +18,7 @@ public class FhirController : ControllerBase
             {
                 new HumanName
                 {
-                    Given = new[] { "Jane" },
+                    Given = new[] { "Jie" },
                     Family = "Doe"
                 }
             },
