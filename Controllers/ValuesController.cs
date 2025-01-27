@@ -145,7 +145,7 @@ public class FhirController : ControllerBase
     //        {
     //            return BadRequest(new { message = "Patient ID in the URL does not match the body." });
     //        }
-
+ 
     //        // Find the patient in the database (assuming you're using a repository or database)
     //        var existingPatient = _patientRepository.GetPatientById(id);
     //        if (existingPatient == null)
