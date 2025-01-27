@@ -30,7 +30,7 @@ jobs:
     - name: Call POST API and capture response
       run: |
        # PowerShell syntax for invoking POST request
-        $uri = "https://localhost:7283/api/fhir/patient"
+        $uri = "https://4e92-47-247-10-34.ngrok-free.app/api/fhir/patient"
         $headers = @{
        "Content-Type" = "application/json"
          }
