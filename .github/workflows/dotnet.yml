@@ -38,7 +38,7 @@ jobs:
           exit 1
         }
 
-        $uri = "https://4e92-47-247-10-34.ngrok-free.app/api/fhir/patient"
+        $uri = "  https://0451-47-247-10-34.ngrok-free.app/api/fhir/patient"
         $headers = @{
           "Content-Type" = "application/json"
         }
