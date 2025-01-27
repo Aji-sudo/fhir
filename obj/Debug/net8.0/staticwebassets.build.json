@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "I5QHYXyalR6EheM0Whl72RqSmQ3BmecRF0Fkjlw9yV8=",
+  "Source": "FHIR_Application",
+  "BasePath": "_content/FHIR_Application",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
