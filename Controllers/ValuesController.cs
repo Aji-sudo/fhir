@@ -98,7 +98,11 @@ public class FhirController : ControllerBase
 
             if (patient == null)
             {
+<<<<<<< HEAD
                 return BadRequest(new { message = "enter details correctly" });
+=======
+                return BadRequest(new { message = "Please enter valid  patient data" });
+>>>>>>> branch1
             }
 
             // Generate a new ID for the patient
