@@ -29,17 +29,39 @@ jobs:
 
     - name: Call POST API and capture response
       run: |
-       # PowerShell syntax for invoking POST request
+        # PowerShell syntax for invoking POST request
+        
+        # Check if the Ngrok tunnel is up
+        $ngrokStatus = Invoke-RestMethod -Uri "http://localhost:4040/api/tunnels" -Method Get -ErrorAction SilentlyContinue
+        if ($ngrokStatus -eq $null) {
+          Write-Error "Ngrok tunnel is not active. Please ensure Ngrok is running."
+          exit 1
+        }
+
         $uri = "https://4e92-47-247-10-34.ngrok-free.app/api/fhir/patient"
         $headers = @{
-       "Content-Type" = "application/json"
-         }
-         $body = '{"resourceType":"Patient","name":[{"use":"official","family":"Doe","given":["John"]}],"gender":"male","birthDate":"1990-01-01"}'
+          "Content-Type" = "application/json"
+        }
+        $body = @{
+          resourceType = "Patient"
+          name = @(
+            @{
+              use = "official"
+              family = "Doe"
+              given = @("John")
+            }
+          )
+          gender = "male"
+          birthDate = "1990-01-01"
+        } | ConvertTo-Json
 
-         # Make the POST request
-       $response = Invoke-RestMethod -Uri $uri -Method Post -Headers $headers -Body $body
-
-       # Output response to check
-       Write-Output "Response: $($response)"
+        try {
+          # Make the POST request
+          $response = Invoke-RestMethod -Uri $uri -Method Post -Headers $headers -Body $body
+          Write-Output "Response: $($response)"
+        } catch {
+          Write-Error "Failed to make POST request: $_"
+          exit 1
+        }
 
 
