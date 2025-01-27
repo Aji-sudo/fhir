@@ -18,31 +18,11 @@ public class FhirController : ControllerBase
             {
                 new HumanName
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-                    Given = new[] { "kane" },
-
-=======
-                    Given = new[] { "mayer" },
->>>>>>> 2d7db874b04803aeeaf5dc1a79615db8620c1c27
-=======
-                    Given = new[] { "Susan" },
->>>>>>> 60b8f949db594a89aa8cdbb59005b970737de2de
-=======
-                    Given = new[] {"jill"},
->>>>>>> 43663188f8ceea24024ed7375c77b6f30c96a37e
-                    Family = "Doe"
-                }
-            },
-<<<<<<< HEAD
-            BirthDate = "1990-01-11",
-=======
-            BirthDate = "1995-01-01",
->>>>>>> db781e9b6438c2b35acc3ddcc1a304e0cc6694ab
+                  Given = new[] { "kane" },
+                   Family = "Doe"
+              
         };
-
+   BirthDate = "1990-01-11",
         // Serialize Patient resource to JSON and return it
         return Ok(patient.ToJson());
     }
