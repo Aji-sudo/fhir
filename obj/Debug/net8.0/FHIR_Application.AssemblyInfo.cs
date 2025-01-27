@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FHIR_Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e9e9be1f21478c2ebb802bb3be6a01e1f43c9ac")]
 [assembly: System.Reflection.AssemblyProductAttribute("FHIR_Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FHIR_Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
