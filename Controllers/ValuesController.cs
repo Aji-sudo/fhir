@@ -36,7 +36,11 @@ public class FhirController : ControllerBase
                     Family = "Doe"
                 }
             },
+<<<<<<< HEAD
             BirthDate = "1990-01-11",
+=======
+            BirthDate = "1995-01-01",
+>>>>>>> db781e9b6438c2b35acc3ddcc1a304e0cc6694ab
         };
 
         // Serialize Patient resource to JSON and return it
