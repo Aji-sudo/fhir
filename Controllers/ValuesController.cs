@@ -14,7 +14,7 @@ public class FhirController : ControllerBase
         var patient = new Patient
         {
             Id = id,
-            Name = new List<HumanName>
+            Name = new List<HumaName>
             {
                 new HumanName
                 {
