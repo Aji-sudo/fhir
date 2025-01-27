@@ -29,9 +29,17 @@ jobs:
 
     - name: Call POST API and capture response
       run: |
-        echo "Calling POST API"
-        POST_RESPONSE=$(curl -X POST "https://localhost:7283/api/fhir/patient" -H "Content-Type: application/json" -d "{\"resourceType\":\"Patient\",\"name\":[{\"use\":\"official\",\"family\":\"Doe\",\"given\":[\"John\"]}],\"gender\":\"male\",\"birthDate\":\"1990-01-01\"}" -s -w "%{http_code}")
-        STATUS_CODE=$(echo "$POST_RESPONSE" | tail -n 1)
-        RESPONSE_BODY=$(echo "$POST_RESPONSE" | head -n -1)
-        echo "POST Status Code: $POST_STATUS_CODE"
-        echo "POST Response Body: $POST_RESPONSE_BODY"
+       # PowerShell syntax for invoking POST request
+        $uri = "https://localhost:7283/api/fhir/patient"
+        $headers = @{
+       "Content-Type" = "application/json"
+         }
+         $body = '{"resourceType":"Patient","name":[{"use":"official","family":"Doe","given":["John"]}],"gender":"male","birthDate":"1990-01-01"}'
+
+         # Make the POST request
+       $response = Invoke-RestMethod -Uri $uri -Method Post -Headers $headers -Body $body
+
+       # Output response to check
+       Write-Output "Response: $($response)"
+
+
