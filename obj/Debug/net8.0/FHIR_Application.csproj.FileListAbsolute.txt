@@ -38,3 +38,5 @@ C:\Users\AG2802\source\repos\FHIR_Application\FHIR_Application\obj\Debug\net8.0\
 C:\Users\AG2802\source\repos\FHIR_Application\FHIR_Application\obj\Debug\net8.0\FHIR_Application.pdb
 C:\Users\AG2802\source\repos\FHIR_Application\FHIR_Application\obj\Debug\net8.0\FHIR_Application.genruntimeconfig.cache
 C:\Users\AG2802\source\repos\FHIR_Application\FHIR_Application\obj\Debug\net8.0\ref\FHIR_Application.dll
+C:\Users\AG2802\source\repos\FHIR_Application\FHIR_Application\obj\Debug\net8.0\FHIR_Application.sourcelink.json
+C:\Users\AG2802\source\repos\FHIR_Application\FHIR_Application\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

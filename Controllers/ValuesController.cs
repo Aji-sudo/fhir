@@ -179,4 +179,4 @@ public class FhirController : ControllerBase
         // Mock deletion logic: Assume the patient is deleted
         return NoContent();
     }
-}.
+}
