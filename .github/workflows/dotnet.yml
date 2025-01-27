@@ -27,19 +27,10 @@ jobs:
     - name: Build the project
       run: dotnet build --configuration Release
 
-    - name: Call GET API and capture response
-      run: |
-        echo "Calling GET API"
-        $GET_RESPONSE = curl -X GET "https://your-api-url/get-endpoint" -s -w "%{http_code}" -o get_response.txt
-        $GET_STATUS_CODE = (Get-Content get_response.txt | Select-Object -Last 1)
-        $GET_RESPONSE_BODY = Get-Content get_response.txt -Raw
-        echo "GET Status Code: $GET_STATUS_CODE"
-        echo "GET Response Body: $GET_RESPONSE_BODY"
-
     - name: Call POST API and capture response
       run: |
         echo "Calling POST API"
-        $POST_RESPONSE = curl -X POST "https://your-api-url/post-endpoint" -H "Content-Type: application/json" -d '{"key1":"value1", "key2":"value2"}' -s -w "%{http_code}" -o post_response.txt
+        $POST_RESPONSE =curl -X POST "https://localhost:7283/api/fhir/patient" -H "Content-Type: application/json" -d "{\"resourceType\":\"Patient\",\"name\":[{\"use\":\"official\",\"family\":\"Doe\",\"given\":[\"John\"]}],\"gender\":\"male\",\"birthDate\":\"1990-01-01\"}" -s -w "%{http_code}" -o post_response.txt
         $POST_STATUS_CODE = (Get-Content post_response.txt | Select-Object -Last 1)
         $POST_RESPONSE_BODY = Get-Content post_response.txt -Raw
         echo "POST Status Code: $POST_STATUS_CODE"
