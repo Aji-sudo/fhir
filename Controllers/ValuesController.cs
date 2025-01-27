@@ -18,8 +18,9 @@ public class FhirController : ControllerBase
             {
                 new HumanName
                 {
-                    Given = new[] { "via" },
+                    Given = new[] { "kane" },
                     Family = "Doe"
+                }
             },
             BirthDate = "1990-01-01",
         };
@@ -178,4 +179,4 @@ public class FhirController : ControllerBase
         // Mock deletion logic: Assume the patient is deleted
         return NoContent();
     }
-}
+}.
