@@ -19,12 +19,16 @@ public class FhirController : ControllerBase
                 new HumanName
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                     Given = new[] { "kane" },
 
 =======
                     Given = new[] { "mayer" },
 >>>>>>> 2d7db874b04803aeeaf5dc1a79615db8620c1c27
+=======
+                    Given = new[] { "Susan" },
+>>>>>>> 60b8f949db594a89aa8cdbb59005b970737de2de
                     Family = "Doe"
                 }
             },
@@ -154,7 +158,7 @@ public class FhirController : ControllerBase
     //        if (id != jsonBody.Id)
     //        {
     //            return BadRequest(new { message = "Patient ID in the URL does not match the body." });
-    //        }
+    //        }m
 
     //        // Find the patient in the database (assuming you're using a repository or database)
     //        var existingPatient = _patientRepository.GetPatientById(id);
